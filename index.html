@@ -1,19 +1,32 @@
 <html>
   <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Thanos Snap</title>
     <style>
+      h1 {
+        text-align: center;
+      }
       .container {
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
       }
+      @media screen and (max-width: 600px) {
+        .container {
+          margin-top: 10%;
+        }
+
+        #video {
+          width: 80%
+        }
+      }
     </style>
   </head>
   <body>
     <div class="container">
       <h1>See if the Thanos Snap killed you</h1>
-      <video id="video" width="400px" onclick="handleClick()">
+      <video id="video" height="auto" width="auto" onclick="handleClick()" muted webkit-playsinline playsinline>
         <source
           src="https://media1.giphy.com/media/huDwzY5141blqS88Ld/giphy.mp4"
           type="video/mp4"
