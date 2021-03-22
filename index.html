@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <title>Thanos Snap</title>
+    <style>
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>See if the Thanos Snap killed you</h1>
+      <video id="video" width="400px" onclick="handleClick()">
+        <source
+          src="https://media1.giphy.com/media/huDwzY5141blqS88Ld/giphy.mp4"
+          type="video/mp4"
+        />
+        <img src='https://media.giphy.com/media/huDwzY5141blqS88Ld/giphy.gif' />
+      </video>
+      <h1 id="existence"></h1>
+    </div>
+  </body>
+
+  <script>
+    const handleClick = () => {
+      document.getElementById('video').play()
+      const randomValue = Math.random()
+      setTimeout(() => {
+        if (randomValue < 0.5) {
+        document.getElementById('existence').innerHTML = 'Thanos took your life.'
+      } else {
+        document.getElementById('existence').innerHTML = 'Thanos spared your life!'
+      }
+      }, 800)
+    }
+  </script>
+</html>
